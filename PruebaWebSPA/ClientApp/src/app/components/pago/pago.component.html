@@ -1,0 +1,39 @@
+<div class="container" fxLayout="column">
+  <h1 fxLayoutAlign="center">Compra</h1>
+  <div class="container">
+    <div class="container" fxFlex="40%" fxFlexOffset="30%" fxLayout="row wrap" fxLayoutAlign="center">
+      <form [formGroup]="formulario" class="container" fxLayout="row wrap">
+
+        <mat-form-field fxFlex="47.5%">
+          <input matInput formControlName='nombre' placeholder="Nombre">
+          <mat-error *ngIf="nombre.invalid">{{getErrorMsgNombre()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="47.5%" fxFlexOffset="5%">
+          <input matInput formControlName='apellido' placeholder="Apellido">
+          <mat-error *ngIf="apellido.invalid">{{getErrorMsgApellido()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100%">
+          <input matInput formControlName="email" placeholder="Email" />
+          <mat-error *ngIf="email.invalid">{{getErrorMsgEmail()}}</mat-error>
+        </mat-form-field>
+       
+          <div class="container" fxLayout="row" fxFlex>
+
+            <mat-form-field fxFlex="80%">
+              <input matInput formControlName="direccion" placeholder="Dirección" />
+              <mat-error *ngIf="direccion.invalid">{{getErrorMsgDireccion()}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="15%" fxFlexOffset="5%">
+              <input matInput formControlName="numeroDir" placeholder="Número" />
+              <mat-error *ngIf="numeroDir.invalid">{{getErrorMsgNumeroDir()}}</mat-error>
+            </mat-form-field>
+
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+

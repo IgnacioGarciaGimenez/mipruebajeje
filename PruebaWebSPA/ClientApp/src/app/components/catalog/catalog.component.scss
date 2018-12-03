@@ -1,0 +1,28 @@
+
+.card {
+  max-width: 400px;
+  margin: 1%;
+}
+
+.titulo {
+  position: aboslute;
+  top: 0px;
+  left: 0px;
+
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.mat-card-content {
+  display: flex;
+  flex: 1;
+}
+
+.mat-card-imag {
+  height: 432px;
+  width: 472.156px;
+}
