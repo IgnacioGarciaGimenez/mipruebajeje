@@ -11,6 +11,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PagoComponent } from './components/pago/pago.component';
 import { BirrasService } from './servicios/birras.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CatalogComponent,
     NavBarComponent,
     PagoComponent,
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,

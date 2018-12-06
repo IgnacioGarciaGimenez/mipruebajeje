@@ -5,7 +5,7 @@ import { PagoComponent } from './components/pago/pago.component';
 
 const routes: Routes = [
   { path: '', component: CatalogComponent },
-  { path: 'pago', component: PagoComponent},
+  { path: 'pago/:id', component: PagoComponent},
 ];
 
 @NgModule({

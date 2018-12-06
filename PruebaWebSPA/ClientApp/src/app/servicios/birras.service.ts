@@ -25,4 +25,8 @@ export class BirrasService {
 
   }
 
+  public getBirra(id) {
+    return this.birras.find(i => i.id === id);
+  }
+
 }

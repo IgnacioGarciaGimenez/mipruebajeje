@@ -1,7 +1,9 @@
 <div class="container" fxLayout="column">
-  <h1 fxLayoutAlign="center">Compra</h1>
+ 
   <div class="container">
+
     <div class="container" fxFlex="40%" fxFlexOffset="30%" fxLayout="row wrap" fxLayoutAlign="center">
+      <h1 fxLayoutAlign="center">Compra</h1>
       <form [formGroup]="formulario" class="container" fxLayout="row wrap">
 
         <mat-form-field fxFlex="47.5%">
@@ -18,22 +20,70 @@
           <input matInput formControlName="email" placeholder="Email" />
           <mat-error *ngIf="email.invalid">{{getErrorMsgEmail()}}</mat-error>
         </mat-form-field>
-       
-          <div class="container" fxLayout="row" fxFlex>
 
-            <mat-form-field fxFlex="80%">
-              <input matInput formControlName="direccion" placeholder="Dirección" />
-              <mat-error *ngIf="direccion.invalid">{{getErrorMsgDireccion()}}</mat-error>
-            </mat-form-field>
+        <div class="container" fxLayout="row" fxFlex>
 
-            <mat-form-field fxFlex="15%" fxFlexOffset="5%">
-              <input matInput formControlName="numeroDir" placeholder="Número" />
-              <mat-error *ngIf="numeroDir.invalid">{{getErrorMsgNumeroDir()}}</mat-error>
-            </mat-form-field>
+          <mat-form-field fxFlex="80%">
+            <input matInput formControlName="direccion" placeholder="Dirección" />
+            <mat-error *ngIf="direccion.invalid">{{getErrorMsgDireccion()}}</mat-error>
+          </mat-form-field>
 
-          </div>
+          <mat-form-field fxFlex="15%" fxFlexOffset="5%">
+            <input matInput formControlName="numeroDir" placeholder="Número" />
+            <mat-error *ngIf="numeroDir.invalid">{{getErrorMsgNumeroDir()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="100%" class="example-selected-value" labelPosition="before">Seleccione Forma de pago:</div>
+
+        <mat-radio-group fxFlex="100%" class="example-radio-group" formControlName="formaPago">
+          <mat-radio-button class="example-radio-button" value="efectivo">
+            Efectivo
+          </mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="tarjetaCred">
+            Tarjeta de Crédito
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <div class="container" fxFlex style="margin-top:10px">
+
+          <mat-form-field fxFlex="50%" *ngIf="formaPago.value == 'efectivo'">
+            <input matInput formControlName="montoEfectivo" placeholder="Monto" />
+            <mat-error *ngIf="montoEfectivo.invalid">{{getErrorMsgMonto()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div class="container" style="margin-top:10px" fxLayout="row wrap" fxFlex *ngIf="formaPago.value == 'tarjetaCred'">
+          <mat-form-field fxFlex="65%">
+            <input matInput formControlName='cardHolder' placeholder="Nombre del poseedor">
+            <mat-error *ngIf="cardHolder.invalid">{{getErrorMsgCardHolder()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="25%" fxFlexOffset="10%">
+            <input matInput formControlName='expirationDate' placeholder="Vencimiento">
+            <mat-error *ngIf="expirationDate.invalid">{{getErrorMsgExpirationDate()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="80%" style="margin-top:10px">
+            <input matInput formControlName='cardNumber' placeholder="Numero de tarjeta">
+            <mat-error *ngIf="cardNumber.invalid">{{getErrorMsgCardNumber()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="10%" fxFlexOffset="10%" style="margin-top:10px">
+            <input matInput formControlName='cardCcv' placeholder="CCV">
+            <mat-error *ngIf="cardCcv.invalid">{{getErrorMsgCardCcv()}}</mat-error>
+          </mat-form-field>
+
+        </div>
+
       </form>
     </div>
+    <div class="container" fxflex>
+      Precio: {{cerveza.precio}}
+    </div>
   </div>
+  
 </div>
 
